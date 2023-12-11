@@ -71,6 +71,13 @@ public class AddressService implements AddressMetier {
 
     }
 
+    @Override
+    public String remove(Long id) {
+        this.addressRepository.deleteById(id);
+
+        return "Address deleted successfully !";
+    }
+
     static AddressDto permutAddressToAddressDto(Address address) {
         AddressDto addressDto = new AddressDto();
 

@@ -13,4 +13,6 @@ public interface AddressMetier {
     AddressDto getAddress(Long id);
 
     AddressDto update(Long id, AddressDto address);
+
+    String remove(Long id);
 }

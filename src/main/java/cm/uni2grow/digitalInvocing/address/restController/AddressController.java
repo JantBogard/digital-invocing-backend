@@ -8,6 +8,7 @@ import cm.uni2grow.digitalInvocing.address.model.dto.AddressDto;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -44,4 +45,8 @@ public class AddressController {
         return this.addressMetier.update(idAddress, addressDto);
     }
 
+    @DeleteMapping("/{idAddress}")
+    public String deleteAddress(@PathVariable Long idAddress) {
+        return this.addressMetier.remove(idAddress);
+    }
 }
