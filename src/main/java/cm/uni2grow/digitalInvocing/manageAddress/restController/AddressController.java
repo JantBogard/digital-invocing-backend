@@ -1,10 +1,10 @@
-package cm.uni2grow.digitalInvocing.address.restController;
+package cm.uni2grow.digitalInvocing.manageAddress.restController;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import cm.uni2grow.digitalInvocing.address.metier.AddressMetier;
-import cm.uni2grow.digitalInvocing.address.model.dao.Address;
-import cm.uni2grow.digitalInvocing.address.model.dto.AddressDto;
+import cm.uni2grow.digitalInvocing.manageAddress.metier.AddressMetier;
+import cm.uni2grow.digitalInvocing.manageAddress.model.dao.Address;
+import cm.uni2grow.digitalInvocing.manageAddress.model.dto.AddressDto;
 
 import java.util.List;
 

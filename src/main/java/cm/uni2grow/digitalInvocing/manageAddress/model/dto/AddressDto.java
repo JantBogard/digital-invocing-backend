@@ -1,4 +1,4 @@
-package cm.uni2grow.digitalInvocing.address.model.dto;
+package cm.uni2grow.digitalInvocing.manageAddress.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

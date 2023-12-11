@@ -1,4 +1,4 @@
-package cm.uni2grow.digitalInvocing.address.service;
+package cm.uni2grow.digitalInvocing.manageAddress.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,11 +7,11 @@ import java.util.stream.Collectors;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 
-import cm.uni2grow.digitalInvocing.address.metier.AddressMetier;
-import cm.uni2grow.digitalInvocing.address.model.dao.Address;
-import cm.uni2grow.digitalInvocing.address.model.dto.AddressDto;
-import cm.uni2grow.digitalInvocing.address.repository.AddressRepository;
 import cm.uni2grow.digitalInvocing.config.manageError.ErrorMessages;
+import cm.uni2grow.digitalInvocing.manageAddress.metier.AddressMetier;
+import cm.uni2grow.digitalInvocing.manageAddress.model.dao.Address;
+import cm.uni2grow.digitalInvocing.manageAddress.model.dto.AddressDto;
+import cm.uni2grow.digitalInvocing.manageAddress.repository.AddressRepository;
 
 public class AddressService implements AddressMetier {
 

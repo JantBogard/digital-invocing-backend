@@ -1,4 +1,4 @@
-package cm.uni2grow.digitalInvocing.address.model.dao;
+package cm.uni2grow.digitalInvocing.manageAddress.model.dao;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

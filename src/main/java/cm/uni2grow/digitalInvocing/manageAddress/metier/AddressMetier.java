@@ -1,9 +1,9 @@
-package cm.uni2grow.digitalInvocing.address.metier;
+package cm.uni2grow.digitalInvocing.manageAddress.metier;
 
 import java.util.List;
 
-import cm.uni2grow.digitalInvocing.address.model.dao.Address;
-import cm.uni2grow.digitalInvocing.address.model.dto.AddressDto;
+import cm.uni2grow.digitalInvocing.manageAddress.model.dao.Address;
+import cm.uni2grow.digitalInvocing.manageAddress.model.dto.AddressDto;
 
 public interface AddressMetier {
     AddressDto save(Address address);
