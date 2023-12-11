@@ -1,14 +1,17 @@
 package cm.uni2grow.digitalInvocing.address.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.http.HttpStatus;
 
 import cm.uni2grow.digitalInvocing.address.metier.AddressMetier;
 import cm.uni2grow.digitalInvocing.address.model.dao.Address;
 import cm.uni2grow.digitalInvocing.address.model.dto.AddressDto;
 import cm.uni2grow.digitalInvocing.address.repository.AddressRepository;
+import cm.uni2grow.digitalInvocing.config.manageError.ErrorMessages;
 
 public class AddressService implements AddressMetier {
 
@@ -19,27 +22,53 @@ public class AddressService implements AddressMetier {
     }
 
     @Override
-    public AddressDto save(AddressDto address) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+    public AddressDto save(Address address) {
+        Address dbAddress = this.addressRepository.save(address);
+
+        if (dbAddress == null) {
+            throw new ErrorMessages("We have an error when we try to create this address",
+                    HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        return permutAddressToAddressDto(dbAddress);
     }
 
     @Override
     public List<AddressDto> getAllAddress() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllAddress'");
+        return permutListAddressesToListAddressDtos(this.addressRepository.findAll());
     }
 
     @Override
     public AddressDto getAddress(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAddress'");
+        Optional<Address> optionalAddress = this.addressRepository.findById(id);
+
+        if (optionalAddress.isEmpty()) {
+            throw new ErrorMessages("Address not found", HttpStatus.NOT_FOUND);
+        }
+
+        return permutAddressToAddressDto(optionalAddress.get());
     }
 
     @Override
     public AddressDto update(Long id, AddressDto address) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+        Optional<Address> optionalAddress = this.addressRepository.findById(id);
+
+        if (optionalAddress.isEmpty()) {
+            throw new ErrorMessages("Address not found", HttpStatus.NOT_FOUND);
+        }
+
+        Address dbAddress = optionalAddress.get();
+
+        dbAddress.setCity(address.getCity());
+        dbAddress.setCountry(address.getCountry());
+        dbAddress.setState(address.getState());
+        dbAddress.setStreet(address.getStreet());
+        dbAddress.setZipCode(address.getZipCode());
+
+        dbAddress = this.addressRepository.save(dbAddress);
+
+        return permutAddressToAddressDto(dbAddress);
+
     }
 
     static AddressDto permutAddressToAddressDto(Address address) {
