@@ -27,12 +27,12 @@ public class AddressController {
 
     @GetMapping("/")
     public List<AddressDto> getAllAddress() {
-        return this.addressMetier.getAllAddress();
+        return this.addressMetier.getAll();
     }
 
     @GetMapping("/{idAddress}")
     public AddressDto getAddress(@PathVariable Long idAddress) {
-        return this.addressMetier.getAddress(idAddress);
+        return this.addressMetier.getOne(idAddress);
     }
 
     @PostMapping("/")

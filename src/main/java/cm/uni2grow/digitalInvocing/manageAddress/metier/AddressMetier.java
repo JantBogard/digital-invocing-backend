@@ -8,9 +8,9 @@ import cm.uni2grow.digitalInvocing.manageAddress.model.dto.AddressDto;
 public interface AddressMetier {
     AddressDto save(Address address);
 
-    List<AddressDto> getAllAddress();
+    List<AddressDto> getAll();
 
-    AddressDto getAddress(Long id);
+    AddressDto getOne(Long id);
 
     AddressDto update(Long id, AddressDto address);
 

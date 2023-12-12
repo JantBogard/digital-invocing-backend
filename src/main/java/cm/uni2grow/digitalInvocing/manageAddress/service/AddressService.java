@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 
 import cm.uni2grow.digitalInvocing.config.manageError.ErrorMessages;
 import cm.uni2grow.digitalInvocing.manageAddress.metier.AddressMetier;
@@ -13,6 +14,7 @@ import cm.uni2grow.digitalInvocing.manageAddress.model.dao.Address;
 import cm.uni2grow.digitalInvocing.manageAddress.model.dto.AddressDto;
 import cm.uni2grow.digitalInvocing.manageAddress.repository.AddressRepository;
 
+@Service
 public class AddressService implements AddressMetier {
 
     private AddressRepository addressRepository;
@@ -34,12 +36,12 @@ public class AddressService implements AddressMetier {
     }
 
     @Override
-    public List<AddressDto> getAllAddress() {
+    public List<AddressDto> getAll() {
         return permutListAddressesToListAddressDtos(this.addressRepository.findAll());
     }
 
     @Override
-    public AddressDto getAddress(Long id) {
+    public AddressDto getOne(Long id) {
         Optional<Address> optionalAddress = this.addressRepository.findById(id);
 
         if (optionalAddress.isEmpty()) {
