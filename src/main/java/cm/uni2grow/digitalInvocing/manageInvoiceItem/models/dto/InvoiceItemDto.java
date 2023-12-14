@@ -1,5 +1,6 @@
 package cm.uni2grow.digitalInvocing.manageInvoiceItem.models.dto;
 
+import cm.uni2grow.digitalInvocing.manageInvoice.models.dao.Invoice;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,4 +13,5 @@ public class InvoiceItemDto {
     private int quantity;
     private double price;
     private double total;
+    private Invoice owningInvoice;
 }
