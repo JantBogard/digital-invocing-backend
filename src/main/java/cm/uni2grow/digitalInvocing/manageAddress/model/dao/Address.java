@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import cm.uni2grow.digitalInvocing.manageCustomer.models.dao.Customer;
 import cm.uni2grow.digitalInvocing.manageInvoice.models.dao.Invoice;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,8 +27,10 @@ public class Address {
 
     private String city;
 
+    @Column(nullable = true)
     private String state;
 
+    @Column(nullable = true)
     private String zipCode;
 
     private String country;

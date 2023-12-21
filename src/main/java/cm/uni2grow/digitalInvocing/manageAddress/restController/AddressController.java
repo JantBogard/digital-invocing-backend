@@ -8,6 +8,7 @@ import cm.uni2grow.digitalInvocing.manageAddress.model.dto.AddressDto;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,7 +26,7 @@ public class AddressController {
         addressMetier = theAddressMetier;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public List<AddressDto> getAllAddress() {
         return this.addressMetier.getAll();
     }
@@ -35,7 +36,7 @@ public class AddressController {
         return this.addressMetier.getOne(idAddress);
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public AddressDto addAddress(@RequestBody Address address) {
         return this.addressMetier.save(address);
     }

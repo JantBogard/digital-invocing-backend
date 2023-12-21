@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.springdoc.core.converters.models.Pageable;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,11 @@ public class AddressService implements AddressMetier {
     public List<AddressDto> getAll() {
         return permutListAddressesToListAddressDtos(this.addressRepository.findAll());
     }
+
+    // @Override
+    // public Page<Address> getAllPageable(Pageable pageable) {
+    // return this.addressRepository.findAll(pageable)
+    // }
 
     @Override
     public AddressDto getOne(Long id) {
