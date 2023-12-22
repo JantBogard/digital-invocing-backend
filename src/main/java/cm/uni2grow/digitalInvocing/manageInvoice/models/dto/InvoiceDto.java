@@ -4,7 +4,7 @@ import java.util.List;
 
 import cm.uni2grow.digitalInvocing.manageAddress.model.dao.Address;
 import cm.uni2grow.digitalInvocing.manageCustomer.models.dao.Customer;
-import cm.uni2grow.digitalInvocing.manageInvoiceItem.models.dao.InvoiceItem;
+import cm.uni2grow.digitalInvocing.manageInvoice.models.dao.InvoiceItem;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

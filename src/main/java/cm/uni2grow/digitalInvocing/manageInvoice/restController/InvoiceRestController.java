@@ -24,7 +24,7 @@ public class InvoiceRestController {
         invoiceMetier = theInvoiceMetier;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public List<InvoiceDto> getAll() {
         return invoiceMetier.getAll();
     }
@@ -34,7 +34,7 @@ public class InvoiceRestController {
         return invoiceMetier.getOne(idInvoice);
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public InvoiceDto addInvoice(@RequestBody Invoice invoice) {
         return invoiceMetier.save(invoice);
     }

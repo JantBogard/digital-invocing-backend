@@ -1,5 +1,7 @@
 package cm.uni2grow.digitalInvocing.manageAddress.model.dao;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import cm.uni2grow.digitalInvocing.manageCustomer.models.dao.Customer;
@@ -9,6 +11,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -35,11 +38,11 @@ public class Address {
 
     private String country;
 
-    @OneToOne(mappedBy = "billingAddress")
+    @OneToMany(mappedBy = "billingAddress")
     @JsonIgnore
-    private Invoice invoice;
+    private List<Invoice> invoices;
 
-    @OneToOne(mappedBy = "address")
+    @OneToMany(mappedBy = "address")
     @JsonIgnore
-    private Customer customer;
+    private List<Customer> customer;
 }

@@ -4,7 +4,6 @@ import java.util.List;
 
 import cm.uni2grow.digitalInvocing.manageAddress.model.dao.Address;
 import cm.uni2grow.digitalInvocing.manageCustomer.models.dao.Customer;
-import cm.uni2grow.digitalInvocing.manageInvoiceItem.models.dao.InvoiceItem;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -38,7 +37,7 @@ public class Invoice {
     @OneToMany(mappedBy = "owningInvoice", cascade = CascadeType.ALL)
     private List<InvoiceItem> items;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "address_id")
     private Address billingAddress;
 

@@ -24,7 +24,7 @@ public class CustomerRestController {
         customerMetier = theCustomerMetier;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public List<CustomerDto> getAll() {
         return customerMetier.getAll();
     }
@@ -34,7 +34,7 @@ public class CustomerRestController {
         return customerMetier.getOne(idCustomer);
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public CustomerDto addCustomer(@RequestBody Customer customer) {
         return customerMetier.save(customer);
     }

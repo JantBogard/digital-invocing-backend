@@ -60,7 +60,11 @@ public class CustomerService implements CustomerMetier {
 
         Customer dbCustomer = optionalCustomer.get();
 
-        BeanUtils.copyProperties(customerDto, dbCustomer);
+        dbCustomer.setName(customerDto.getName());
+        dbCustomer.setEmail(customerDto.getEmail());
+        dbCustomer.setAddress(customerDto.getAddress());
+        dbCustomer.setPhone(customerDto.getPhone());
+
         dbCustomer = customerRepository.save(dbCustomer);
 
         return permutCustomerToCustomerDto(dbCustomer);

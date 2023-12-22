@@ -1,6 +1,7 @@
-package cm.uni2grow.digitalInvocing.manageInvoiceItem.models.dao;
+package cm.uni2grow.digitalInvocing.manageInvoice.models.dao;
 
-import cm.uni2grow.digitalInvocing.manageInvoice.models.dao.Invoice;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -30,5 +31,6 @@ public class InvoiceItem {
 
     @ManyToOne
     @JoinColumn(name = "invoice_id")
+    @JsonIgnore
     private Invoice owningInvoice;
 }

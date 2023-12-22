@@ -1,4 +1,4 @@
-package cm.uni2grow.digitalInvocing.manageInvoiceItem.models.dto;
+package cm.uni2grow.digitalInvocing.manageInvoice.models.dto;
 
 import cm.uni2grow.digitalInvocing.manageInvoice.models.dao.Invoice;
 import lombok.AllArgsConstructor;
